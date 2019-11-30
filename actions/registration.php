@@ -1,6 +1,6 @@
 <?php
     include '../db.php';
-    var_dump($_REQUEST);
+    // var_dump($_REQUEST);
     $link = connect();
     $name = $_REQUEST['name'];
     $surname = $_REQUEST['surname'];
@@ -38,7 +38,8 @@
     // var_dump($query);
     $link->query($query);
     // var_dump($link->error);
+    header("Location: http://piter/login.html");
 ?>
 <script>
-    
+    window.location.href("http://piter/login.html");
 </script>
