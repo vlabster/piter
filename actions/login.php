@@ -4,7 +4,7 @@
     $email = $_REQUEST['email'];
     $password = $_REQUEST['password'];
     //$password = password_hash($password1, PASSWORD_DEFAULT);
-    $query = "SELECT password, email from user where user.email = '$email'";
+    $query = "SELECT password, email, id as user from user where user.email = '$email'";
     $res = $link->query($query);
     while ($row = $res->fetch_assoc()) {
         // password_verify ( string $password , string $hash )
@@ -16,7 +16,8 @@
             echo ("Неверный email!");
             exit;
         }
+        $user = $row['user'];
     }
-    header("Location: http://piter/profile.php");
+    header("Location: http://piter/profile.php?user=$user");
 ?>
 
