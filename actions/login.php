@@ -17,8 +17,6 @@
             exit;
         }
     }
-    header("Location: http://piter");
+    header("Location: http://piter/profile.php");
 ?>
-<script>
-    window.location.href("http://profile.php");
-</script>
+
