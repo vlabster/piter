@@ -7,20 +7,20 @@
 
 <body>
 	<?
-		require('temp/template.php'); // Подключаем файл с классом
-		$parse->get_tpl('temp/menu.tpl'); //Файл который мы будем парсить
-		$parse->tpl_parse(); //Парсим
-		echo $parse->template; //Выводим нашу страничку
-		include 'db.php';
-		$link = connect();
-		$userId = $_REQUEST['user'];
-		$query = "SELECT * from user where user.id = $userId";
-		$res = $link->query($query);
-		while ($row = $res->fetch_assoc()) {
-			$name = $row['name'];
-			$surname = $row['surname'];
-			$fathername = $row['fathername'];
-		}
+	require('temp/template.php'); // Подключаем файл с классом
+	$parse->get_tpl('temp/menu.tpl'); //Файл который мы будем парсить
+	$parse->tpl_parse(); //Парсим
+	echo $parse->template; //Выводим нашу страничку
+	include 'db.php';
+	$link = connect();
+	$userId = $_REQUEST['user'];
+	$query = "SELECT * from user where user.id = $userId";
+	$res = $link->query($query);
+	while ($row = $res->fetch_assoc()) {
+		$name = $row['name'];
+		$surname = $row['surname'];
+		$fathername = $row['fathername'];
+	}
 	?>
 	<div id="mainpage">
 		<div class="profile">
@@ -31,8 +31,7 @@
 				<div class="input__wrapper">
 					<input name="file" type="file" name="file" id="input__file" class="input input__file" multiple>
 					<label for="input__file" class="input__file-button">
-						<span class="input__file-icon-wrapper"><img class="input__file-icon" src="logos/day.png"
-								alt="Выбрать файл" width="25"></span>
+						<span class="input__file-icon-wrapper"><img class="input__file-icon" src="logos/day.png" alt="Выбрать файл" width="25"></span>
 					</label>
 				</div>
 			</div>
@@ -42,38 +41,30 @@
 		</div>
 		<div class="check">
 			<?
-				$userId = $_REQUEST['user'];
-				$query = "SELECT hotel.NAME AS hotel, attractions.NAME AS attractions, user.NAME AS name, user.surname AS surname, user.email as email, ticket.TYPE AS ticket 
-				FROM usertour
-				LEFT JOIN hotel ON usertour.hotel = hotel.id
-				LEFT JOIN user ON usertour.user = user.id
-				LEFT JOIN attractions ON usertour.attractions = attractions.id
-				LEFT JOIN ticket ON usertour.ticket = ticket.id
-				WHERE user.id = $userId";
-				$res = $link->query($query);
-				while ($row = $res->fetch_assoc()) {
-					$name = $row['name'];
-					$surname = $row['surname'];
-					$parse->get_tpl('temp/tourCard.tpl'); //Файл который мы будем парсить
-					$FI = $surname . " " . $name;
-					$parse->set_tpl('{FI}',"$FI");
+			include 'actions/getMyTours.php';
+			while ($row = $res->fetch_assoc()) {
+				$name = $row['name'];
+				$surname = $row['surname'];
+				$parse->get_tpl('temp/tourCard.tpl'); //Файл который мы будем парсить
+				$FI = $surname . " " . $name;
+				$parse->set_tpl('{FI}', "$FI");
 
-					$email = $row['email'];
-					$parse->set_tpl('{EMAIL}',"$email");
+				$email = $row['email'];
+				$parse->set_tpl('{EMAIL}', "$email");
 
-					$hotelName = $row['hotel'];
-					$parse->set_tpl('{HOTELNAME}',"$hotelName");
+				$hotelName = $row['hotel'];
+				$parse->set_tpl('{HOTELNAME}', "$hotelName");
 
-					$place = $row['attractions'];
-					$parse->set_tpl('{PLACE}',"$place");
+				$place = $row['attractions'];
+				$parse->set_tpl('{PLACE}', "$place");
 
-					$ticket = $row['ticket'];
-					$parse->set_tpl('{TICKET}',"$ticket");
+				$ticket = $row['ticket'];
+				$parse->set_tpl('{TICKET}', "$ticket");
 
-					$parse->tpl_parse(); //Парсим
+				$parse->tpl_parse(); //Парсим
 
-					echo($parse->template);
-				}	
+				echo ($parse->template);
+			}
 			?>
 		</div>
 		<div class="place">
@@ -94,26 +85,32 @@
 			</div>
 		</div>
 		<div class="game">
-			ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>
-			ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>
-			ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>
+			<?
+			include 'actions/getLikedTours.php';
+			while ($row = $res->fetch_assoc()) {
+				$name = $row['name'];
+				$surname = $row['surname'];
+				$parse->get_tpl('temp/tourCard.tpl'); //Файл который мы будем парсить
+				$FI = $surname . " " . $name;
+				$parse->set_tpl('{FI}', "$FI");
+
+				$email = $row['email'];
+				$parse->set_tpl('{EMAIL}', "$email");
+
+				$hotelName = $row['hotel'];
+				$parse->set_tpl('{HOTELNAME}', "$hotelName");
+
+				$place = $row['attractions'];
+				$parse->set_tpl('{PLACE}', "$place");
+
+				$ticket = $row['ticket'];
+				$parse->set_tpl('{TICKET}', "$ticket");
+
+				$parse->tpl_parse(); //Парсим
+
+				echo ($parse->template);
+			}
+			?>
 		</div>
 	</div>
 
