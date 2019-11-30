@@ -20,5 +20,5 @@
     header("Location: http://piter");
 ?>
 <script>
-    window.location.href("http://piter");
+    window.location.href("http://profile.php");
 </script>

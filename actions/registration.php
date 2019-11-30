@@ -38,8 +38,5 @@
     // var_dump($query);
     $link->query($query);
     // var_dump($link->error);
-    header("Location: http://piter/login.html");
+    header("Location: http://piter/login.php");
 ?>
-<script>
-    window.location.href("http://piter/login.html");
-</script>
