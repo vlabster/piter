@@ -130,6 +130,71 @@
 	overflow-y: scroll; /* прокрутка по вертикали */
 }
 
+.card {
+height:360px;
+width: 80%; 
+text-align:center;
+background: #fff;
+border-radius:10px;
+box-shadow: 0 0 1px rgba(0,0,0,0.5);
+float: left;
+margin-top:10%;
+margin-left:11%;
+text-decoration:none;
+}
+
+.razdel {
+float:left;
+margin-left:10%;
+padding-top:3%;
+}
+
+.who {
+height:70px;
+width: 90%; 
+text-align:center;
+background: #fff;
+border-radius:10px;
+box-shadow: 0 0 1px rgba(0,0,0,0.5);
+float: left;
+margin-top:5%;
+margin-left:5%;
+padding-right:6%;
+clear:left;
+
+}
+
+.whofio {
+float:right;
+padding-right:16%;
+padding-top:6%;
+text-transform: capitalize;
+}
+
+.whomail {
+clear:right;
+float:right;
+padding-right:3%;
+}
+
+.otelname {
+text-align:center;
+font-weight:600;
+padding-top:4%;
+}
+
+.dostoprim {
+text-align:center;
+font-weight:600;
+padding-top:28%;
+}
+
+.tic {
+text-align:center;
+font-weight:600;
+padding-top:28%;
+}
+
 ::-webkit-scrollbar { width: 10px; height: 3px;}
 ::-webkit-scrollbar-button {  background-color:none; }
 ::-webkit-scrollbar-track-piece { background-color: #ffffff;}
@@ -207,6 +272,7 @@
 	font-weight:300;
 	font-size:1.4em;
 }
+
 
 
 

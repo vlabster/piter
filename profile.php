@@ -11,6 +11,16 @@
 		$parse->get_tpl('temp/menu.tpl'); //Файл который мы будем парсить
 		$parse->tpl_parse(); //Парсим
 		echo $parse->template; //Выводим нашу страничку
+		include 'db.php';
+		$link = connect();
+		$userId = $_REQUEST['user'];
+		$query = "SELECT * from user where user.id = $userId";
+		$res = $link->query($query);
+		while ($row = $res->fetch_assoc()) {
+			$name = $row['name'];
+			$surname = $row['surname'];
+			$fathername = $row['fathername'];
+		}
 	?>
 	<div id="mainpage">
 		<div class="profile">
@@ -27,30 +37,44 @@
 				</div>
 			</div>
 			<div class="fio">
-				Марк Серёгин
+				<? echo ("$name $surname"); ?>
 			</div>
 		</div>
 		<div class="check">
-			ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>
-			ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>
-			ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>ффффффффффффффффффф
-			<Br>фффффффффффффффффффффф<br>
+			<?
+				$userId = $_REQUEST['user'];
+				$query = "SELECT hotel.NAME AS hotel, attractions.NAME AS attractions, user.NAME AS name, user.surname AS surname, user.email as email, ticket.TYPE AS ticket 
+				FROM usertour
+				LEFT JOIN hotel ON usertour.hotel = hotel.id
+				LEFT JOIN user ON usertour.user = user.id
+				LEFT JOIN attractions ON usertour.attractions = attractions.id
+				LEFT JOIN ticket ON usertour.ticket = ticket.id
+				WHERE user.id = $userId";
+				$res = $link->query($query);
+				while ($row = $res->fetch_assoc()) {
+					$name = $row['name'];
+					$surname = $row['surname'];
+					$parse->get_tpl('temp/tourCard.tpl'); //Файл который мы будем парсить
+					$FI = $surname . " " . $name;
+					$parse->set_tpl('{FI}',"$FI");
+
+					$email = $row['email'];
+					$parse->set_tpl('{EMAIL}',"$email");
+
+					$hotelName = $row['hotel'];
+					$parse->set_tpl('{HOTELNAME}',"$hotelName");
+
+					$place = $row['attractions'];
+					$parse->set_tpl('{PLACE}',"$place");
+
+					$ticket = $row['ticket'];
+					$parse->set_tpl('{TICKET}',"$ticket");
+
+					$parse->tpl_parse(); //Парсим
+
+					echo($parse->template);
+				}	
+			?>
 		</div>
 		<div class="place">
 			<div class="btn">
