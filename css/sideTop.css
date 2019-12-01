@@ -115,7 +115,9 @@
     border: 3px solid #02ce6b; /* Параметры рамки */
     
    }
-   
+   .act4 {
+	background-color: #02ce6b;
+}
 .hotelthis {
 	text-align:center;
 	font-weight:600;
