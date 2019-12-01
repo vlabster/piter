@@ -145,6 +145,18 @@
 	padding-left:6%;
 }
 
+.namebtn {
+	padding:10px;
+	color:#fff;
+	background-color:#02ce6b;
+	font-weight:600;
+	border-radius:25px;
+	border:none;
+	text-decoration:none;
+	margin-left: 48%;
+	margin-top: 14%;
+}
+
 .transport {
 	float:left;
 	padding-top:1.7%;
