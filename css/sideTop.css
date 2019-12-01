@@ -88,7 +88,7 @@
 ::-webkit-scrollbar-button {  background-color:none; }
 ::-webkit-scrollbar-track-piece { background-color: #ffffff;}
 ::-webkit-scrollbar-thumb { height: 0px; background-color: #666; border-radius: 0px;}
-::-webkit-scrollbar-corner { background-color: #999;}}
+::-webkit-scrollbar-corner { background-color: #999;}
 ::-webkit-resizer { background-color: #666;}
 
 .hotel {
