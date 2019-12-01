@@ -18,7 +18,7 @@
       <li> </li>
       <div class="otst">
         <li>
-          <div class="col"><img src="img/logos/home_btn.png" width=24px heigth=24px class="act1">&nbsp;&nbsp;&nbsp;</div>
+          <div class="col"><a href="index.php"><img src="img/logos/home_btn.png" width=24px heigth=24px class="act1">&nbsp;&nbsp;&nbsp;</a></div>
         </li>
         <li><a href="constructor.php"><img src="img/logos/person_btn.png" width=24px heigth=24px class="act2">&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="profile.php?user=5"><img src="img/logos/games_btn.png" width=24px heigth=24px class="act3">&nbsp;&nbsp;&nbsp;</a></li>

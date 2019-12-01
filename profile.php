@@ -23,22 +23,19 @@
 	}
 	?>
 	<div id="mainpage">
-		<div class="profile">
-			<div class="circle">
+		 <div class="profile">
+			<!--<div class="circle">
 
 			</div>
-			<!-- <div class="plus">
-				<div class="input__wrapper">
-					<input name="file" type="file" name="file" id="input__file" class="input input__file" multiple>
-					<label for="input__file" class="input__file-button">
-						<span class="input__file-icon-wrapper"><img class="input__file-icon" src="logos/day.png" alt="Выбрать файл" width="25"></span>
-					</label>
-				</div>
-			</div> -->
+			
 			<div class="fio">
-				<? echo ("$name $surname"); ?>
-			</div>
-		</div>
+				<? 
+				// echo ("$name $surname"); 
+				?>
+			</div> -->
+			<img src="img/logos/profail.png" alt="" style="margin-left: 5%;">
+		</div> 
+		
 		<div class="check">
 			<?
 			// include 'actions/getMyTours.php';
