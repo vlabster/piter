@@ -3,6 +3,9 @@
         <img src="img/logos/razdel.png" width=24px>
     </div>
     <div class="who">
+       <!-- <div class="photoProf">
+            <img src="{PHOTO}" width=24px class="photoProfI">
+        </div> -->
         <div class="whofio">
             {FI}
         </div>

@@ -34,6 +34,7 @@
         }
     }
     $password = password_hash($password1, PASSWORD_DEFAULT);
+    $photo = 'img/users/unnamed.jpg';
     $query = "INSERT into user(name, surname, fathername, phone, email, password) values('$name', '$surname', '$fathername', '$phone', '$email', '$password')";
     // var_dump($query);
     $link->query($query);

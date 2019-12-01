@@ -1,6 +1,7 @@
 <?php
 $userId = $_REQUEST['user'];
-$query = "SELECT hotel.NAME AS hotel, attractions.NAME AS attractions, user.NAME AS NAME, user.surname AS surname, ticket.TYPE AS ticket 
+$query = "SELECT hotel.NAME AS hotel, attractions.NAME AS attractions, user.NAME AS name, user.surname AS surname, 
+user.email as email, ticket.TYPE AS ticket 
 FROM userlikedtour
 LEFT JOIN usertour ON userlikedtour.tour = usertour.id
 LEFT JOIN hotel ON usertour.hotel = hotel.id

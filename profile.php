@@ -61,6 +61,9 @@
 				$ticket = $row['ticket'];
 				$parse->set_tpl('{TICKET}', "$ticket");
 
+				$photo = $row['photo'];
+				$parse->set_tpl('{PHOTO}', $photo);
+
 				$parse->tpl_parse(); //Парсим
 
 				echo ($parse->template);
