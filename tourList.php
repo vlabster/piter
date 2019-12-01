@@ -53,29 +53,29 @@
 						Эрмитаж
 					</div>
 					<div class="thismus">
-						Эрмитаж
+						Дворец Петра I
 					</div>
 					<div class="thismus">
-						Эрмитаж
+						Дворец Елизаветы Великой
 					</div>
 					<div class="thismus">
-						Эрмитаж
+						Кунсткамера
 					</div>
 					<div class="thismus">
-						Эрмитаж
+						Музей Эрарта
 					</div>
 					<div class="thismus">
-						Эрмитаж
+						Дворцовая Площадь
 					</div>
 					<div class="thismus">
-						Эрмитаж
+						Анчиков мост
 					</div>
 
 				</div>
 				<div class="trans">
 					<div class="transname">
 						Транспорт
-						<img src="logos/tick.png" width=20px heigth=20px>
+						<img src="img/logos/tick.png" width=20px heigth=20px>
 						<div class="ticket">
 
 
