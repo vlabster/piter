@@ -282,3 +282,7 @@
 	padding-right:100px;
 	border:none;
 }
+
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }

@@ -392,6 +392,10 @@ hr {
 	clear: left;
 }
 
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }
+
 
 
 	

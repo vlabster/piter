@@ -288,6 +288,9 @@ padding-top:28%;
 	font-size:1.4em;
 }
 
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }
 
 
 
